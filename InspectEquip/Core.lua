@@ -46,6 +46,7 @@ local namesInitialized = false
 local tooltipTimer = nil
 
 local valorPoints = "Valor points"
+local outlandToken = "Outland war Token"
 
 --------------------------------------------------------------------------------------
 
@@ -546,6 +547,8 @@ function IE:FindItem(itemLink, includeUnknown)
         tinsert(sources, {catname, zone, srctype, boss, nil, setname})
       elseif cat == "v" then -- Valor Points: v_COST
         tinsert(sources, {L["PvE rewards"], valorPoints, nil, nil, tonumber(next_field()), next_field()})
+	  elseif cat == "z" then -- Outland war Token: z_COST
+        tinsert(sources, {L["PvE rewards"], outlandToken, nil, nil, tonumber(next_field()), next_field()})
       elseif cat == "t" then -- Argent Tournament: t_COST
         tinsert(sources, {L["Argent Tournament"], nil, nil, nil, tonumber(next_field())})
       elseif cat == "c" then -- Crafted: c_PROFESSION
@@ -559,6 +562,8 @@ function IE:FindItem(itemLink, includeUnknown)
         tinsert(sources, {L["Darkmoon Faire"]})
       elseif cat == "g" then -- Vendor (Gold): g
         tinsert(sources, {L["Vendor"]})
+	  elseif cat == "b" then -- Heroic TBC Instances
+        tinsert(sources, {L["Heroic TBC Instances"]})
       elseif cat == "p" then -- PvP: p_PVPTYPE
         local pvptype = pvptypes[next_field()]
         tinsert(sources, {L["PvP rewards"], pvptype})
@@ -581,6 +586,7 @@ end
 
 function IE:GetItemNames()
   valorPoints = GetItemInfo(160000) or valorPoints
+  outlandToken = GetItemInfo(280512) or outlandToken
   namesInitialized = true
 end
 
