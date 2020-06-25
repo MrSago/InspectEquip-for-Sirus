@@ -18,6 +18,7 @@ L["Display a warning for unenchanted items"] = "Display a warning for unenchante
 L["PvE rewards"] = "PvE rewards"
 L["Valor points"] = "Valor points"
 L["Outland war Token"] = "Outland war Token"
+L["Lily"] = "Lily"
 L["Heroic TBC Instances"] = "Heroic TBC Instances"
 L["Hard mode"] = "Hard mode"
 L["Heroic"] = "Heroic"

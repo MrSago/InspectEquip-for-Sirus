@@ -562,6 +562,8 @@ function IE:FindItem(itemLink, includeUnknown)
         tinsert(sources, {L["Darkmoon Faire"]})
       elseif cat == "g" then -- Vendor (Gold): g
         tinsert(sources, {L["Vendor"]})
+	  elseif cat == "l" then -- Lily
+        tinsert(sources, {L["Lily"]})
 	  elseif cat == "b" then -- Heroic TBC Instances
         tinsert(sources, {L["Heroic TBC Instances"]})
       elseif cat == "p" then -- PvP: p_PVPTYPE
